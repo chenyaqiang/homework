@@ -29,7 +29,7 @@ class PhoneByLazyUp {
     //防止反射入侵创建对象的状态标志，
     // 存在疑问？在引用内部类之前用反射创建对象时呢
     private PhoneByLazyUp() {
-        synchronized (this) {
+        synchronized (this.getClass()) {
             if (status == false) {
                 status = !status;
             } else {
